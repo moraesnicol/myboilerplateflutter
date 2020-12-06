@@ -12,16 +12,37 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    return Scaffold(
+      backgroundColor: Colors.tealAccent,
+      appBar: AppBar(
+          title: Center(child: const Text('Que App Fdp')),
+          backgroundColor: Colors.amber
+          ),
+     
+      body: Center(
           child: GestureDetector(
-              child: Text('Contador: $count'),
-              onTap: () {
-                setState(() {
-                  count++;
-                });
-                
-              })),
+        child: Text('Contador: $count',
+          style: TextStyle(fontSize: 40),
+          ),
+        onDoubleTap: () {
+          setState(() {
+            count++;
+
+          });
+        },
+      )),
+       floatingActionButton: FloatingActionButton(
+      
+        child: Icon(Icons.add_a_photo_outlined), 
+        splashColor: Colors.redAccent, 
+        onPressed: () {
+          setState(() {
+            count++;
+
+          });
+        
+      },
+      ),
     );
   }
 }
