@@ -24,15 +24,47 @@ class HomePageState extends State<HomePage> {
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,   //vertical
-            crossAxisAlignment: CrossAxisAlignment.stretch, //horizontal
-           
-           
+          child: ListView(
+              scrollDirection: Axis.horizontal,
             children: [
               
               Text('Dark Mode'),
               CustomSwitcher(),
+              Container(
+                child: Row(children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.pink
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.green
+                  )
+                  ,
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.yellowAccent
+                  )
+                  ,
+                  Container(
+                    width: 50,
+                    height: 100,
+                    color: Colors.blue
+                  ),
+                  Container(
+                    width: 40,
+                    height: 100,
+                    color: Colors.purple
+                  )
+
+
+                ],),
+              )
+              
+
             
 
             ],
