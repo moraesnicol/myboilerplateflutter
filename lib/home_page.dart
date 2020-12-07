@@ -14,67 +14,30 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: Drawer(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.home_rounded),
+              tileColor: Colors.deepPurple,
+              title: Text('Bem Vindo(a)'),
+              subtitle: Text('Meu Perfil'),
+              onTap: () {
+                print('home');
+              },
+            )
+          ],
+        )),
         appBar: AppBar(
-            title: Center(child: const Text('Que App Fdp')),
-            backgroundColor: Colors.amber,
-            actions: [
-              CustomSwitcher(),
-            ],
+          title: Center(child: const Text('@objetivopolicialbr')),
+          backgroundColor: Colors.amber,
+          actions: [
+            CustomSwitcher(),
+          ],
         ),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: ListView(
-              scrollDirection: Axis.horizontal,
-            children: [
-              
-              Text('Dark Mode'),
-              CustomSwitcher(),
-              Container(
-                child: Row(children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.pink
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.green
-                  )
-                  ,
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.yellowAccent
-                  )
-                  ,
-                  Container(
-                    width: 50,
-                    height: 100,
-                    color: Colors.blue
-                  ),
-                  Container(
-                    width: 40,
-                    height: 100,
-                    color: Colors.purple
-                  )
-
-
-                ],),
-              )
-              
-
-            
-
-            ],
-        ),
-      )
-    );
+        body: Container());
   }
 }
-
-
 
 class CustomSwitcher extends StatelessWidget {
   @override
@@ -83,6 +46,6 @@ class CustomSwitcher extends StatelessWidget {
         value: AppController.instance.isDartTheme,
         onChanged: (value) {
           AppController.instance.changeTheme();
-    });
+        });
   }
 }
