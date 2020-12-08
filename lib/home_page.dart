@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/app_controller.dart';
+
+import 'widgets/app_darktheme.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,13 +40,4 @@ class HomePageState extends State<HomePage> {
   }
 }
 
-class CustomSwitcher extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-        value: AppController.instance.isDartTheme,
-        onChanged: (value) {
-          AppController.instance.changeTheme();
-        });
-  }
-}
+
