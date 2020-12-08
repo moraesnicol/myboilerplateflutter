@@ -19,13 +19,12 @@ class MyApp extends StatelessWidget {
             : Brightness.light,
             
         ),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => LoginPage(),
-          '/home': (context) => HomePage(),
-         },
+
+            '/': (context) => LoginPage(),
+            '/home': (context) => HomePage(),
+
+          }
         );
       },
-    );
   }
 }
