@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/app_controller.dart';
-import 'package:helloworld/login_page.dart';
-import 'home_page.dart';
+import 'package:helloworld/widgets/app_darktheme.dart';
+import 'package:helloworld/pages/login_page.dart';
 
-class AppWidget extends StatelessWidget {
+import 'pages/home_page.dart';
+
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder( 
@@ -17,7 +19,11 @@ class AppWidget extends StatelessWidget {
             : Brightness.light,
             
         ),
-          home: LoginPage(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => LoginPage(),
+          '/home': (context) => HomePage(),
+         },
         );
       },
     );
