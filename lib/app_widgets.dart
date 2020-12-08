@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/widgets/app_darktheme.dart';
-import 'package:helloworld/pages/login_page.dart';
-import 'pages/home_page.dart';
+import 'package:helloworld/pages/login/login_page.dart';
+import 'pages/home/home_page.dart';
+import 'pages/login/login_page.dart';
 
 class MyApp extends StatelessWidget {
   @override

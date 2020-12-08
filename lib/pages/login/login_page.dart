@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/pages/home_page.dart';
+import 'package:helloworld/pages/home/home_page.dart';
+import 'package:helloworld/services/auth.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -7,6 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +55,8 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.deepPurple,
                       textColor: Colors.white,
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => HomePage()));
+                   //     Navigator.of(context).push(MaterialPageRoute(
+                   //         builder: (context) => HomePage()));
                       },
                       child: Text('Entrar'),
                     ),
@@ -67,8 +70,17 @@ class _LoginPageState extends State<LoginPage> {
                     highlightColor: Colors.amber,
                     color: Colors.red,
                     textColor: Colors.white,
-                    onPressed: () {},
-                    child: Text('Esqueci minha senha'),
+                    onPressed: () async {
+                      dynamic result = await _auth.signInAnon();
+                      if (result == null) {
+                        print('erro ao logar');
+                      } else {
+                        print('logado');
+                        print('result');
+                        Navigator.of(context).pushReplacementNamed('/home');
+                      }
+                    },
+                    child: Text('Login Anônimo'),
                   ),
                 ],
               ),
