@@ -31,6 +31,12 @@ class SignInPage extends StatelessWidget {
                   );
             },
             child: Text("Sign in"),
+          ),
+          RaisedButton(
+            onPressed: () {
+              context.read<AuthenticationService>().signInAnon();
+            },
+            child: Text("Login Anonymous"),
           )
         ],
       ),

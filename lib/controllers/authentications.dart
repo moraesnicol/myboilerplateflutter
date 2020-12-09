@@ -29,6 +29,21 @@ class AuthenticationService {
     }
   }
 
+
+// anonymous login
+Future signInAnon() async {
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
+    return " login anonimo";
+  } on  FirebaseAuthException catch (e) {
+    return e.message;
+  }
+}
+
+
+
+
+
   /// There are a lot of different ways on how you can do exception handling.
   /// This is to make it as easy as possible but a better way would be to
   /// use your own custom class that would take the exception and return better
