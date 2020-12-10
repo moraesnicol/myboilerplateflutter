@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:helloworld/pages/viroses/viroses.dart';
+import 'package:helloworld/pages/login/authentication_service.dart';
 import 'package:provider/provider.dart';
 
-import 'controllers/authentications.dart';
+import 'pages/home/home_page.dart';
 import 'pages/login/loginScreen.dart';
 
 Future<void> main() async {
@@ -43,7 +43,7 @@ class AuthenticationWrapper extends StatelessWidget {
     final firebaseUser = context.watch<User>();
 
     if (firebaseUser != null) {
-      return Viroses();
+      return HomePage();
     }
     return SignInPage();
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/controllers/authentications.dart';
 import 'package:provider/provider.dart';
+
+import 'authentication_service.dart';
+//import 'package:auth_buttons/auth_buttons.dart';
 
 class SignInPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -34,10 +36,37 @@ class SignInPage extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () {
-              context.read<AuthenticationService>().signInAnon();
+              context.read<AuthenticationService>().signUp(
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
+                  );
             },
-            child: Text("Login Anonymous"),
-          )
+            child: Text("register"),
+          ),
+          RaisedButton(
+            onPressed: () {
+              context.read<AuthenticationService>().signUp(
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
+                  );
+            },
+            child: Text("register"),
+          ),
+          //  RaisedButton(
+          //       onPressed: () {
+          //   //     Navigator.push(
+          //         context,
+          //           MaterialPageRoute(builder: (context) => RegisterPage()),
+          //   );
+          //       },
+          //        child: Text("Register"),
+          //      ),
+          //        GoogleAuthButton(
+          //        onPressed: () {
+          //         context.read<AuthenticationService>().signInWithGoogle();
+          //     },
+          //    darkMode: true,
+          //),
         ],
       ),
     );
