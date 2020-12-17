@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'pages/home/home_page.dart';
 import 'pages/login/loginScreen.dart';
+import 'pages/reset/resetemail.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,13 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: AuthenticationWrapper(),
+          initialRoute: '/',
+    routes: {
+      // When navigating to the "/" route, build the FirstScreen widget.
+      '/home': (context) => SignInPage(),
+      // When navigating to the "/second" route, build the SecondScreen widget.
+      '/resetaccount': (context) => ResetScreen(),
+    },
       ),
     );
   }

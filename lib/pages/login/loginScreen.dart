@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -45,12 +46,11 @@ class SignInPage extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () {
-              context.read<AuthenticationService>().signUp(
-                    email: emailController.text.trim(),
-                    password: passwordController.text.trim(),
-                  );
+              Navigator.of(context).pushReplacementNamed('/resetaccount');
+
+              //      Navigator.pushNamed(context, '/resetaccount');
             },
-            child: Text("register"),
+            child: Text("Lost Password"),
           ),
           //  RaisedButton(
           //       onPressed: () {
